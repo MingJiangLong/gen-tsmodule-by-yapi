@@ -1,0 +1,1 @@
+# 用于根据yapi 导出json实体生成 typescript interface

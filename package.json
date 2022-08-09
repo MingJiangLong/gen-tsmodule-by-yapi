@@ -1,0 +1,20 @@
+{
+  "name": "gen-by-yapi",
+  "version": "1.0.0",
+  "description": "yapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "自动生成",
+    "yapi",
+    "typescript",
+    "module"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.6.4"
+  }
+}
