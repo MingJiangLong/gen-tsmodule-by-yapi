@@ -52,7 +52,7 @@ export type ApiItem = {
  * 必须满足json
  */
 export type PropertyObject = {
-    $$ref: string
+    $$ref?: string
     properties: {
         [k: string]:
         | PropertyInteger
@@ -62,34 +62,34 @@ export type PropertyObject = {
         | PropertyBoolean
     }
     required?: string[]// 当前层级必填项
-    title: string
+    title?: string
     type: "object"
-    description: string
+    description?: string
 }
 export type PropertyInteger = {
     type: "integer" | "number"
-    description: string
-    maximum: number
-    minimum: number
-    format: string
-    exclusiveMaximum: boolean
-    exclusiveMinimum: boolean
+    description?: string
+    maximum?: number
+    minimum?: number
+    format?: string
+    exclusiveMaximum?: boolean
+    exclusiveMinimum?: boolean
 }
 export type PropertyString = {
-    example: string
-    type: 'string'
-    description: string
-    pattern: string
+    example?: string
+    type?: 'string'
+    description?: string
+    pattern?: string
 }
 export type PropertyArray = {
-    description: string
+    description?: string
     type: "array"
-    format: string
+    format?: string
     items: Property
 }
 export type PropertyBoolean = {
     type: "boolean",
-    description: string
+    description?: string
 }
 
 export type Property =

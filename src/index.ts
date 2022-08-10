@@ -44,7 +44,7 @@ function getJsonFiles() {
 }
 
 
-function main() {
+export function main() {
     getJsonFiles().forEach(jsonFilePath => {
 
         // 解析得yapi接口信息
@@ -133,7 +133,7 @@ function formatBaseType(type?: string) {
 }
 
 
-function getContent(item: Property, name: string, remark: string) {
+export function getContent(item: Property, name: string, remark: string) {
 
     let interfaceDes = ''
     function innerFn(item: Property, name: string, remark: string) {
@@ -158,10 +158,10 @@ function getContent(item: Property, name: string, remark: string) {
 
                 // 基础类型
                 if (baseTypes.includes(property.type)) {
-                    keyDes += `${genMark(property.description)}\n\t${key}${key}${required?.includes(key) ? '' : '?'}: ${formatBaseType(property.type)};`;
+                    keyDes += `${genMark(property.description || '')}\n\t${key}${required?.includes(key) ? '' : '?'}: ${formatBaseType(property.type)};`;
                 } else {
                     let nameForNextInterface = getNewTypeName();
-                    keyDes += `${genMark(property.description)}\n\t${key}${required?.includes(key) ? '' : '?'}: ${nameForNextInterface};`;
+                    keyDes += `${genMark(property.description || '')}\n\t${key}${required?.includes(key) ? '' : '?'}: ${nameForNextInterface};`;
                     innerFn(property, nameForNextInterface, property.description || `对象${key}的实体`);
                 }
             })
@@ -195,4 +195,3 @@ function getContent(item: Property, name: string, remark: string) {
         console.log("genContent", error)
     }
 }
-main()
